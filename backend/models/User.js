@@ -109,7 +109,7 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
 // Instance method to generate JWT token
 userSchema.methods.generateAuthToken = function() {
   const payload = {
-    userId: this._id,
+    id: this._id, // CORRECTED LINE
     email: this.email,
     role: this.role
   };

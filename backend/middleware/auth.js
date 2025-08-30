@@ -13,7 +13,8 @@ const auth = async (req, res, next) => {
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.findById(decoded.userId).select('-password');
+    // CORRECTED: Changed decoded.userId to decoded.id
+    const user = await User.findById(decoded.id).select('-password');
     
     if (!user || !user.isActive) {
       return res.status(401).json({ 
@@ -33,7 +34,7 @@ const auth = async (req, res, next) => {
 };
 
 // Admin only middleware (must be used after auth middleware)
-const adminAuth = (req, res, next) => {
+const isAdmin = (req, res, next) => {
   if (req.user && req.user.role === 'admin') {
     next();
   } else {
@@ -50,7 +51,8 @@ const optionalAuth = async (req, res, next) => {
     
     if (token) {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
-      const user = await User.findById(decoded.userId).select('-password');
+      // CORRECTED: Changed decoded.userId to decoded.id
+      const user = await User.findById(decoded.id).select('-password');
       
       if (user && user.isActive) {
         req.user = user;
@@ -66,6 +68,6 @@ const optionalAuth = async (req, res, next) => {
 
 module.exports = {
   auth,
-  adminAuth,
+  isAdmin, // RENAMED for clarity
   optionalAuth
 };
