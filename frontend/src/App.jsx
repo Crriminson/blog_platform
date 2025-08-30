@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const apiCall = async (endpoint, method = 'GET', body = null) => {
-    const url = `http://localhost:5000/api${endpoint}`;
+  const url = `https://blog-platform-qwws.onrender.com/api${endpoint}`;
     // Always prefer the latest token from state, fallback to localStorage
     const authToken = token !== null ? token : localStorage.getItem('token');
     const headers = { 'Content-Type': 'application/json' };
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) });
+  const response = await fetch('https://blog-platform-qwws.onrender.com/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, password }) });
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || 'Login failed');
       setUser(data.user); setToken(data.token);
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
      try {
-      const response = await fetch('http://localhost:5000/api/auth/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(userData), });
+  const response = await fetch('https://blog-platform-qwws.onrender.com/api/auth/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(userData), });
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || 'Registration failed');
       setUser(data.user); setToken(data.token);
