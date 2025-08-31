@@ -180,7 +180,7 @@ const ShowcaseSection = () => {
     <section className="py-24 sm:py-32">
       <div className="max-w-6xl mx-auto px-4 space-y-8">
         <ShowcaseCard title="Design your space" description="Bring your blog to life with a stunning design. Choose from a library of easy-to-use templates with flexible layouts." imageSide="right" bgColor="bg-brand-primary" textColor="text-white" image={<svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 30H80V40H20V30ZM20 50H60V60H20V50ZM20 70H80V80H20V70Z"/></svg>} />
-        <ShowcaseCard title="Track your growth" description="See where your audience is coming from and what they’re interested in with our built-in analytics." imageSide="left" bgColor="bg-brand-card-blue-dark" textColor="text-white" image={<svg viewBox="0 0 100 100" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 80C30 80 40 40 50 40C60 40 70 80 80 80" strokeWidth="8" strokeLinecap="round"/></svg>} />
+  <ShowcaseCard title="Track your growth" description="See where your audience is coming from and what they’re interested in with our built-in analytics." imageSide="left" bgColor="bg-brand-dark-blue" textColor="text-white" image={<svg viewBox="0 0 100 100" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 80C30 80 40 40 50 40C60 40 70 80 80 80" strokeWidth="8" strokeLinecap="round"/></svg>} />
         <ShowcaseCard title="Focus on your passion" description="We handle the rest. Spend less time managing your site and more time creating amazing content." imageSide="right" bgColor="bg-brand-card-blue-light" textColor="text-gray-900" image={<svg viewBox="0 0 100 100" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 20L80 80H20L50 20Z" strokeWidth="8" strokeLinejoin="round"/></svg>} />
       </div>
     </section>
@@ -364,7 +364,7 @@ const AdminStats = () => {
 
   const statItems = [
     { label: 'Total Users', value: stats.overview.totalUsers, color: 'bg-brand-dark-blue', textColor: 'text-white' }, 
-    { label: 'Total Blogs', value: stats.overview.totalBlogs, color: 'bg-brand-card-blue-dark', textColor: 'text-white' },
+  { label: 'Total Blogs', value: stats.overview.totalBlogs, color: 'bg-brand-dark-blue', textColor: 'text-white' },
     { label: 'Pending Blogs', value: stats.overview.pendingBlogs, color: 'bg-brand-card-blue-light', textColor: 'text-gray-900' },
     { label: 'Approved Blogs', value: stats.overview.publishedBlogs, color: 'bg-brand-primary', textColor: 'text-white' },
   ];
