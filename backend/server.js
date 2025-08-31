@@ -15,7 +15,7 @@ connectDB();
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production'
-    ? ['https://blog-platform-qwws.onrender.com']
+    ? ['https://blog-platform-frontend-72d7.onrender.com']
     : ['http://localhost:3000', 'http://localhost:5173'],
   credentials: true
 }));
